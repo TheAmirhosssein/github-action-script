@@ -9,6 +9,7 @@ if [ -d "$TARGET_DIR" ]; then
     git stash
     git -c http.extraheader="AUTHORIZATION: bearer $REPOSITORY_TOKEN" pull
 else
+    mkdir $TARGET_DIR
     cd $TARGET_DIR
     git clone https://$REPOSITORY_TOKEN@$REPOSITORY.git .
 fi
