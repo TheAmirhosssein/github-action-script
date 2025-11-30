@@ -9,6 +9,6 @@ cd $TARGET_DIR;
 export DOCKER_REGISTRY=$DOCKER_REGISTRY
 
 docker compose -f docker-compose.prod.yaml down
-docker image rm -f $DOCKER_REGISTRY/$IMAGE_NAME:latest || true
+docker rmi -f $IMAGE_NAME:latest || true
 docker compose -f docker-compose.prod.yaml pull
 docker compose -f docker-compose.prod.yaml up -d
